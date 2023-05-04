@@ -1,0 +1,134 @@
+
+/* 請將背景圖片覆蓋整個網頁, 固定住, 不留空白 */
+body {
+    background-image: url("city.jpg"); /* 設置背景圖片 */
+    background-position: center; /* 設置背景圖片置中 */
+    background-repeat: no-repeat; /* 設置背景圖片不重複 */
+    background-size: cover; /* 設置背景圖片覆蓋整個網頁 */
+    background-attachment: fixed; /* 設置背景圖片固定住 */
+    margin: 0; /* 設置 margin 為 0，不留空白 */
+    padding: 0; /* 設置 padding 為 0，不留空白 */
+}
+
+/* 設置容器的寬度和最小高度，以及設置每個欄位的寬度和浮動方式： */
+.container {
+    max-width: 1200px;
+    /* 設置容器的最大寬度 */
+    margin: 0 auto;
+    /* 讓容器水平置中 */
+    min-height: 500px;
+    /* 設置容器的最小高度 */
+    display: flex;
+    /* 使用 flexbox 佈局 */
+    flex-wrap: wrap;
+    /* 設置 flexbox 的換行方式 */
+}
+
+.column {
+    display: none;
+    /* 隱藏所有欄位 */
+
+    width: 33.33%;
+    /* 設置每個欄位的寬度 */
+    float: left;
+    /* 設置欄位的浮動方式 */
+    height: 100%;
+    /* 設置欄位的高度 */
+    background-color: rgba(50, 50, 50, 0.5);
+    /* 設置半透明的背景色 */
+    padding: 20px;
+    /* 設置欄位的內邊距 */
+    box-sizing: border-box;
+    /* 設置盒模型為 border-box */
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+}
+
+/* 顯示選擇的欄位 */
+.column1,
+.column2,
+.column3 {
+    display: block;
+}
+
+/* 當螢幕寬度小於 768px 時，將每個欄位的寬度設置為 100% */
+@media screen and (max-width: 768px) {
+    .column {
+        width: 100%;
+    }
+}
+
+/* 接下來，我們需要設置當滑鼠移動到欄位上時的樣式。我們可以使用:hover 擴展選擇器來實現這一點： */
+.column:hover {
+    background-color: rgba(50, 50, 50, 0.7);
+    /* 設置背景色的透明度降低 */
+    color: #fff;
+    /* 設置文字顏色為白色 */
+}
+
+.column h2 {
+    font-size: 24px;
+    /* 設置標題的字體大小 */
+    margin-bottom: 10px;
+    /* 設置標題與圖片之間的間距 */
+}
+
+.column img {
+    opacity: 0.4;   /*很透明*/
+    max-width: 100%;
+    /* 設置圖片的最大寬度 */
+    height: auto;
+    /* 設置圖片的高度自適應 */
+    display: block;
+    /* 設置圖片為塊級元素 */
+    margin-bottom: 20px;
+    /* 設置圖片與下一個元素之間的間距 */
+    display: block;
+    margin: 0 auto;
+    vertical-align: middle;
+    /* 讓每個欄裡的圖片置中 */
+}
+
+.column:hover img {
+    opacity: 1;  /*不透明*/
+    /* 設置圖片的透明度為 0.5 */
+}
+
+/* 將下拉式選單置中 */
+#column-select {
+    text-align: center;
+    margin: 20px auto;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    /* 讓下拉式選單的寬度與頁面同寬 */
+}
+
+/* 美化下拉式選單 */
+#column-select {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 隱藏下拉式選單的箭頭 */
+#column-select::-ms-expand {
+    display: none;
+}
+
+#column-select::-webkit-scrollbar {
+    width: 10px;
+}
+
+#column-select::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+#column-select option {
+    background-color: #fff;
+    color: #333;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 
+請運用 css 建立一個三欄式的響應式網頁, 每個欄位都是半透明的背景色, 都有標題, 圖片, 不包含內容
+當螢幕較小的時候, 變成上下排列
+當移滑鼠到特定欄位時, 背景顏色的透明度會降低, 文字變成白色
+請提供完整內容及詳細註解 
+-->
+<!-- 以下是一個基本的三欄式響應式網頁的 HTML 結構： -->
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Three Column Layout</title>
+    <!-- 引入 CSS 檔案 -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <!--
+        請加入下拉式選單, 放置在最上方, 當選擇全部時, 顯示全部欄位
+        當選擇某一特定欄位時, 只顯示那個欄位
+
+        每個 option 元素都有一個 value 屬性，這個屬性的值對應到每個欄位的 class 屬性。當選擇某個 option 時，就可以根據其 value 屬性的值來顯示或隱藏相應的欄位。
+    -->
+    <select id="column-select">
+        <option value="all">All Columns</option>
+        <option value="column1">Column 1</option>
+        <option value="column2">Column 2</option>
+        <option value="column3">Column 3</option>
+    </select>
+
+    <div class="container">
+        <div class="column column1">
+            <h2>Column 1</h2>
+            <img src="building.jpg">
+        </div>
+        <div class="column column2">
+            <h2>Column 2</h2>
+            <img src="car.jpg">
+        </div>
+        <div class="column column3">
+            <h2>Column 3</h2>
+            <img src="woman.jpg">
+        </div>
+    </div>
+    <!-- 引入 JavaScript 檔案 -->
+    <script src="script.js"></script>
+</body>
+
+</html>
